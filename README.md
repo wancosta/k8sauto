@@ -37,7 +37,6 @@ Pré-requisitos necessário para execução do desafio:
 ---
 
 ## **1. Instalação Requisitos**
-
 <details>
 <summary>1.1 GIT</summary>
 
@@ -52,7 +51,6 @@ Pré-requisitos necessário para execução do desafio:
 </details>
 
 <summary>2.1 tfen / terraform</summary>
-
 1. Comando para instalação:
    ```bash
    Baixando o Tfenv:

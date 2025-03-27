@@ -305,7 +305,7 @@ Pré-requisitos necessário para execução do desafio:
 
 ## **4. Criando o Cluster kubernetes no kind.**
 <details>
-<summary>Docker</summary>
+<summary>Kind</summary>
 
  1. Criar o Cluster Kubernetes com Kind: 
    ```bash
@@ -337,20 +337,22 @@ Pré-requisitos necessário para execução do desafio:
    ```
 </details>
 
+---
 
+## **5. Instalando o Metrics server / HPA autoscaling.**
+<details>
+<summary>Metrics Server</summary>
 
-
-
-
-Configurando auto-escalamento (HPA - Horizontal Pod Autoscaler)
-* Instalando Metrics Server.
-
-Execute o seguinte comando para instalar o Metrics Server:
-kubectl apply -f https://github.com/wancosta/desafio/blob/main/components.yaml
-
-Execute o seguinte comando para verificar se o Metrics Server está funcionando corretamente:
-kubectl get deployment metrics-server -n kube-system
-
+ 1. Instalando e configurando o Metrics Server. 
+   ```bash
+   Execute o seguinte comando para instalar o Metrics Server:
+   kubectl apply -f https://github.com/wancosta/desafio/blob/main/components.yaml
+   ```
+2. Com a instalação concluida vamos validar.
+   ```bash
+   Execute o seguinte comando para verificar se o Metrics Server está funcionando corretamente:
+   kubectl get deployment metrics-server -n kube-system
+   ```
 
 
 

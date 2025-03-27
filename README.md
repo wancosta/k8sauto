@@ -1,4 +1,4 @@
-# iti Kubernetes Challenge
+# Deafio
 
 ## Sobre o Desafio: 
 

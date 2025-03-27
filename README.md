@@ -231,11 +231,12 @@ Pré-requisitos necessário para execução do desafio:
    ```bash
    Ambos serão instalados via receita terraform.
    ```
+</details>
+---
 
 ## **2. Buildando a aplicação**
 <details>
 <summary>GRADLE</summary>
-
 1. Com o Gradle 4.10 instalado execute:
    ```bash
    Gradle inite - Ira verificar os pacotes e baixar os pendentes

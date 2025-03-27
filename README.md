@@ -49,6 +49,23 @@ Pré-requisitos necessário para execução do desafio:
    git --version
    ```
 </details>
+<details>
+<summary>TFENV</summary>
+
+1. Comando para instalação:
+   ```bash
+   sudo dnf install git -y
+   ```
+2. Validação:
+   ```bash
+   git --version
+   ```
+</details>
+
+
+
+
+
 
 <summary>tfen / terraform</summary>
 1. Comando para instalação:

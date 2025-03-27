@@ -618,8 +618,8 @@ spec:
 
 ## ** Evidencias**
 <details>
-<summary>GIT</summary>
-
+<summary>Creando Cluster</summary>
+ 2. Conforme evidencias abaixo, cluster criado. 
 <p align="center">
-<img src="./evidencia/itau.png" style="width:247px;height:143px;" />
+<img src="./evidencia/01-cluster_create.png" style="width:247px;height:143px;" />
 </p>

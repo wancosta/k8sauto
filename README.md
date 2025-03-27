@@ -24,8 +24,9 @@ Temos neste repositório uma aplicação em Kotlin simples com uma API REST que 
 
 ## Entrega do desafio:
 
-Clone esse repositório e realize todas as modificações, depois que terminar, compacte o repositorio e nos envie. Mantenha o .git no arquivo compactado, queremos analisar os seus commits.
- **Versão do Gradle: 4.10**
+Clone esse repositório e realize todas as modificações, depois que terminar, compacte o repositorio e nos envie. 
+Mantenha o .git no arquivo compactado, queremos analisar os seus commits.
+**Versão do Gradle: 4.10**
 
 ---
 

@@ -72,10 +72,36 @@ Pré-requisitos necessário para execução do desafio:
    tfenv -v
    ```
 </details>
+<details>
+<summary>DOCKER</summary>
 
+1. Adicione o repositório do Docker:
+   ```bash
+   sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+   ```
+2. Com o repositório adicionado, instale o Docker, que é composto de três pacotes::
+   ```bash
+   sudo dnf install docker-ce docker-ce-cli containerd.io -y 
+   ```
+3. Após a conclusão da instalação, inicie o daemon do Docker e coloque na inicilização automatica::
+   ```bash
+   sudo systemctl start docker
+   sudo systemctl enable docker
+   sudo systemctl status docker
+   ```
+4. Executando o comando Docker sem Sudo (opcional):
+   ```bash 
+   Executando o comando Docker sem Sudo (opcional)
+   Se você quiser evitar digitar sudo sempre que executar o comando docker, adicione seu nome de usuário ao grupo docker:
+   sudo usermod -aG docker $(whoami)
 
-
-
+   Se você precisar adicionar um usuário ao dockergrupo no qual não está logado, declare esse nome de usuário explicitamente usando:
+   sudo usermod -aG docker nome_de_usuário_aqui
+   ```
+5. Ativando usuario sem root:
+   ```bash
+   OBS: Após a ação acime e necessario reiniciar o terminal.
+   ```
 
 
 

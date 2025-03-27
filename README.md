@@ -353,6 +353,78 @@ Pré-requisitos necessário para execução do desafio:
    Execute o seguinte comando para verificar se o Metrics Server está funcionando corretamente:
    kubectl get deployment metrics-server -n kube-system
    ```
+</details>
 
+---
 
+## **6. Configurando o Helm para o Deploy.**
+<details>
+<summary>Helm Chart</summary>
 
+ 1. Agora, vamos criar um Helm Chart para facilitar o deploy da aplicação no Kubernetes.. 
+   ```bash
+   Crie um diretório para o Helm Chart:
+   mkdir -p Chart/app
+
+   Com o diretório criado execulte:
+   helm create Chart
+
+   Dentro desse diretório, veremos uma estrutura padrão criada pelo Helm. 
+   Vamos focar principalmente nos arquivos values.yaml e chart.yaml.
+   ```
+ 2. Ajustando o aquivo values.  
+   ```bash
+Edite o arquivo values.yaml para incluir informações sobre a imagem Docker.
+Vamos ajustar para executar na porta correta.
+OBS: Esse paraenetro " pullPolicy: IfNotPresent " e muito importe pois devido a ele
+conseguimis utilizar a importada ao king sem a necessidade de baixar uma novo. 
+
+replicaCount: 1
+
+image:
+  repository: meu-desafio
+  pullPolicy: IfNotPresent 
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 8080
+
+ingress:
+  enabled: false
+
+resources: {}
+
+   ```
+ 2. Ajustando o aquivos Chart.  
+   ```bash
+   No arquivo chart.yaml, vamos garantir que o contêiner use a imagem que acabamos de criar. 
+   Certifique-se de que o contêiner é configurado para rodar na porta 8080:
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app.kubernetes.io/name: {{ .Chart.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ .Chart.Name }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ .Chart.Name }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: meu-desafio
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: 8080
+   ```
+</details>

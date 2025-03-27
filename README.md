@@ -619,7 +619,43 @@ spec:
 ## ** Evidencias**
 <details>
 <summary>Creando Cluster</summary>
- 2. Conforme evidencias abaixo, cluster criado. 
+ 1. Conforme evidencias abaixo, cluster criado. 
 <p align="center">
 <img src="./evidencias/01-cluster_create.png"" />
+</p>
+
+---
+ 2. Metrics Server /HPA Instalado.
+<p align="center">
+<img src="./evidencias/02-HPA_install.png"" />
+</p>
+
+---
+ 3. Build Imagem Gocker.
+<p align="center">
+<img src="./evidencias/03-build_imagem_docker.png"" />
+</p>
+
+---
+ 4. Testando Imagem.
+<p align="center">
+<img src="./evidencias/04-testando_imagem.png"" />
+</p>
+
+---
+ 5. Importando Imagem para o kind.
+<p align="center">
+<img src="./evidencias/05-import_image.png"" />
+</p>
+
+---
+ 6. Inicializando terraform.
+<p align="center">
+<img src="./evidencias/06-inicializando_terraformpng.png"" />
+</p>
+
+---
+ 7. Terraform plan.
+<p align="center">
+<img src="./evidencias/07-terraform_plan.png"" />
 </p>

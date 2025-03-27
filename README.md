@@ -236,7 +236,7 @@ Pré-requisitos necessário para execução do desafio:
 
 1. OBS:
    ```bash
-   Ambos serão instalados via receita terraform.
+   Ambos serão instalados via receita .
    ```
 </details>
 
@@ -515,10 +515,103 @@ spec:
    terraform fmt       -> Ira identar o código
    terraforma plan     -> Ele ira planeja toda execução e os retorna o que será criado.
    terraform apply     -> Aplica executando a crialção solicitada na receita no nosso caso o deploy da aplicação.
+   ```
+</details>
 
+## **8. Observabilidade.**
+<details>
+<summary>Terraform</summary>
+
+ 1. Agora vomos instalar o Grafana e o Prometheus. 
+   ```bash
+   Vamos criar o diretório: mkdir observabilidade.
+   Nele vamos criar dois arrquivos com a receita de instalação.
+   vim prometheus-values.yaml com o conteudo abaixo:
+
+   server:
+     global:
+       scrape_interval: 15s
+
+     extraScrapeConfigs:
+       - job_name: "desafio-app"
+         metrics_path: "/actuator/prometheus"
+         static_configs:
+           - targets:
+               - "desafio-app.default.svc.cluster.local:8080"
+
+
+   Na sequencia ja crie o arquivo grafana-values.yaml, com o conteudo abaixo:
+
+      adminPassword: admin
+
+   service:
+     type: NodePort
+
+   datasources:
+     datasources.yaml:
+       apiVersion: apps/v1
+       datasources:
+         - name: Prometheus
+           type: prometheus
+           url: http://prometheus-server.monitoring.svc.cluster.local
+           access: proxy
+           isDefault: true
+
+   dashboardProviders:
+     dashboardproviders.yaml:
+       apiVersion: apps/v1
+       providers:
+         - name: 'default'
+           orgId: 1
+           folder: ''
+           type: file
+           disableDeletion: false
+           editable: true
+           options:
+             path: /var/lib/grafana/dashboards
+
+   dashboards:
+     default:
+       kubernetes-cluster:
+         gnetId: 315
+         revision: 1
+         datasource: Prometheus
+       node-exporter:
+         gnetId: 1860
+         revision: 1
+         datasource: Prometheus
+       kubernetes-deployments:
+         gnetId: 6417
+         revision: 1
+         datasource: Prometheus
+       kubernetes-pods:
+         gnetId: 3131
+         revision: 1
+         datasource: Prometheus
+       sre-burn-rate:
+         gnetId: 11074
+         revision: 1
+         datasource: Prometheus
+       sre-latency:
+         gnetId: 7587
+         revision: 1
    ```
 
+  </details>
 
+ 2. Deployando a Observalidade "Grafana e Prometheus". 
+   ```bash
+   Agora adicione o repositorio com o comando:
+   helm repo add grafana https://grafana.github.io/helm-charts
 
+   Agora atualize suas bibliotecas com o comando:
+   helm repo update
+  
+   Agora, dentro do diretório observabilidade digite:
+   helm upgrade --install grafana grafana/grafana -f prometheus-value.yaml
+  Aguarde concluir.
 
-
+   Para validar a instalação grafana digite:
+   kubectl get pods -l app=grafana
+   ```
+  </details>

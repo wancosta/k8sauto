@@ -621,5 +621,5 @@ spec:
 <summary>Creando Cluster</summary>
  2. Conforme evidencias abaixo, cluster criado. 
 <p align="center">
-<img src="./evidencias/01-cluster_create.png" style="width:800px;height:600px;" />
+<img src="./evidencias/01-cluster_create.png"" />
 </p>

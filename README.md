@@ -379,24 +379,24 @@ Vamos ajustar para executar na porta correta.
 OBS: Esse paraenetro " pullPolicy: IfNotPresent " e muito importe pois devido a ele
 conseguimis utilizar a importada ao king sem a necessidade de baixar uma novo. 
 
-replicaCount: 1
+   replicaCount: 1
 
-image:
-  repository: meu-desafio
-  pullPolicy: IfNotPresent 
-  tag: latest
+   image:
+     repository: meu-desafio
+     pullPolicy: IfNotPresent 
+     tag: latest
 
-service:
-  type: ClusterIP
-  port: 8080
+   service:
+     type: ClusterIP
+     port: 8080
 
-ingress:
-  enabled: false
+   ingress:
+     enabled: false
 
-resources: {}
+   resources: {}
 
    ```
- 2. Ajustando o aquivos Chart.  
+ 3. Ajustando o aquivos Chart.  
    ```bash
    No arquivo chart.yaml, vamos garantir que o contêiner use a imagem que acabamos de criar. 
    Certifique-se de que o contêiner é configurado para rodar na porta 8080:

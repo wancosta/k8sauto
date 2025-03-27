@@ -54,40 +54,23 @@ Pré-requisitos necessário para execução do desafio:
 
 1. Comando para instalação:
    ```bash
-   sudo dnf install git -y
-   ```
-2. Validação:
-   ```bash
-   git --version
-   ```
-</details>
-
-
-
-
-
-
-<summary>tfen / terraform</summary>
-1. Comando para instalação:
-   ```bash
    Baixando o Tfenv:
    git clone https://github.com/tfutils/tfenv.git ~/.tfenv
    ```
-2. Configurando:
+2. Configuramdp:
    ```bash
    Adicionando a variavel de ambiente no bash_profile para poder chamar de qualquer diretório:
    echo 'export PATH="$HOME/.tfenv/bin:$PATH"' >> ~/.bash_profile
    ```
-3. Auternativa:
+3. Auternativa para configurar:
    ```bash
    Auternativa ao bash profile:
    sudo ln -s ~/.tfenv/bin/* /usr/local/bin
    ```
-4. Auternativa:
+4. Comando para instalação:
    ```bash
-   Comando para validação:
-  tfenv -v
-   ```   
+   tfenv -v
+   ```
 </details>
 
 
@@ -97,11 +80,6 @@ Pré-requisitos necessário para execução do desafio:
 
 
 
-Auternativa ao bash profile:
-sudo ln -s ~/.tfenv/bin/* /usr/local/bin
-
-Comando para validação:
-tfenv -v
 
 
 

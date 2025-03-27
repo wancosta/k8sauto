@@ -222,7 +222,14 @@ Pré-requisitos necessário para execução do desafio:
    ```bash
    helm version
    ```
+</details>
+<details>
+<summary>Grafahna e prometheus</summary>
 
+1. OBS:
+   ```bash
+   Ambos serão instalados via receita terraform.
+   ```
 
 
 

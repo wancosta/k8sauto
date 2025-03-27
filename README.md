@@ -202,13 +202,26 @@ Pré-requisitos necessário para execução do desafio:
    ```bash
    kotlin -version
    ```
+</details>
+<details>
+<summary>HELM</summary>
 
-
-
-
-Instalando o Kotlin:
-sdk install kotlin 1.9.10
-kotlin -version
+1. Abaixo, segue comando para download do Helm:
+   ```bash
+   curl -fsSL https://get.helm.sh/helm-v3.16.1-linux-amd64.tar.gz -o helm-linux-amd64.tar.gz
+   ```
+   2. Extraido pacote
+   ```bash
+   tar -zxvf helm-linux-amd64.tar.gz
+   ```
+   3 Movendo par o /usr/local/bin/ para chamar o binario de qualque lugar no servidor.
+   ```bash
+   sudo mv linux-amd64/helm /usr/local/bin/helm
+   ```
+   4. Validando a instalação e versão:
+   ```bash
+   helm version
+   ```
 
 
 

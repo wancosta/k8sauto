@@ -68,9 +68,16 @@ Pré-requisitos necessário para execução do desafio:
    Auternativa ao bash profile:
    sudo ln -s ~/.tfenv/bin/* /usr/local/bin
    ```
-4. Comando para instalação:
+4. Comando para validação:
    ```bash
    tfenv -v
+   ```
+5. Instalando o Terraform:
+   ```bash
+    Para instalar o terraform digite:
+    tfenv install 1.8.3
+    Aguarde concluir o download ai digite:
+    tfenv use 1.8.3  
    ```
 </details>
 <details>
@@ -431,7 +438,7 @@ spec:
 
 ---
 
-## **7. Terrafor.**
+## **7. Terraform.**
 <details>
 <summary>Terraform</summary>
 
@@ -499,3 +506,19 @@ spec:
      default = 8080
    }
    ```
+ 3. Agora seá a reeita do arquivo de variaveis. 
+   ```bash
+   Com os arvos criados e no padrão vamos executala-los
+   No memso diretório dos arquivos digite:
+   terraforma init     -> Ira inicializar o terraform e baixar suads dependencias.
+   terraform validate  -> Ira validar se seu codigo esta ok
+   terraform fmt       -> Ira identar o código
+   terraforma plan     -> Ele ira planeja toda execução e os retorna o que será criado.
+   terraform apply     -> Aplica executando a crialção solicitada na receita no nosso caso o deploy da aplicação.
+
+   ```
+
+
+
+
+

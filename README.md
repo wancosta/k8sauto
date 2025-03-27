@@ -1,9 +1,10 @@
-# Deafio
+# Challenge - Kubernetes
 
 ## Sobre o Desafio: 
 
-Esse é um teste feito para conhecer um pouco mais de cada candidato. Não é um teste objetivo e não há apenas uma solução que consideramos correta. O intuito é ser um estudo de caso com o propósito de conhecer o seu modo de trabalhar.
-
+Esse é um teste feito para conhecer um pouco mais de cada candidato. 
+Não é um teste objetivo e não há apenas uma solução que consideramos correta. 
+O intuito é ser um estudo de caso com o propósito de conhecer o seu modo de trabalhar.
 
 ## Introdução
 
@@ -24,5 +25,16 @@ Temos neste repositório uma aplicação em Kotlin simples com uma API REST que 
 ## Entrega do desafio:
 
 Clone esse repositório e realize todas as modificações, depois que terminar, compacte o repositorio e nos envie. Mantenha o .git no arquivo compactado, queremos analisar os seus commits.
-
  **Versão do Gradle: 4.10**
+
+---
+
+## **Pré-requisitos**
+
+Pré-requisitos necessário para execução do desafio:
+ Git - Terraform / tfenv - ocker - Kind - Kubectl - java-17-openjdk - Gradle 4.10 - kotlin - Helm -  Metrics Server / Para auto scale
+
+---
+
+## **Instalação Requisitos**
+

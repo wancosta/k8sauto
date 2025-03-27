@@ -102,31 +102,50 @@ Pré-requisitos necessário para execução do desafio:
    ```bash
    OBS: Após a ação acime e necessario reiniciar o terminal.
    ```
+</details>
+<details>
+<summary>KIND</summary>
 
+1. Baixando o kind:
+   ```bash
+   [ $(uname -m) = x86_64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.27.0/kind-linux-amd64
+   ```
+2. Transformando o binario em executavel:
+   ```bash
+   chmod +x ./kind
+   ```
+3. Configurando o kind para responder com o usuário em quaquer diretório:
+   ```bash
+   sudo mv ./kind /usr/local/bin/kind 
+   ou
+   sudo ln -s ~/kind /usr/local/bin/kind
+   ```
+4. Para validar e verificar a versão:
+   ```bash
+   kind --versiono
+   ```
+</details>
+<details>
+<summary>KUBECTL</summary>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+1. Baixando o kubectl:
+   ```bash
+   curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+   ```
+2. Transformando o binario em executavel:
+   ```bash
+   chmod +x kubectl
+   ```
+3. Configurando o kubectl para responder com o usuário em quaquer diretório:
+   ```bash
+   sudo mv ./kubectl /usr/local/bin/kubectl
+   ou
+   sudo ln -s ~/kubectl /usr/local/bin/kubectl
+   ```
+4. Para validar e verificar a versão:
+   ```bash
+   kubectl version --output=yaml
+   ```
 
 
 

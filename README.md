@@ -618,12 +618,10 @@ spec:
 
 ## ** Evidencias**
 <details>
-<summary>Creando Cluster</summary>
  1. Conforme evidencias abaixo, cluster criado. 
 <p align="center">
 <img src="./evidencias/01-cluster_create.png"" />
 </p>
-
  
 ---
 <summary>Metrics Server /HPA Instalado</summary>
@@ -655,8 +653,26 @@ spec:
 <p align="center">
 <img src="./evidencias/06-inicializando_terraformpng.png"" />
 </p>
+
 ---
  7. Terraform plan.
 <p align="center">
 <img src="./evidencias/07-terraform_plan.png"" />
+</p>
+
+---
+ 8. Hello Word.
+<p align="center">
+<img src="./evidencias/09-hello_word.png"" />
+</p>
+
+---
+ 9. Aesso Prometheus.
+<p align="center">
+<img src="./evidencias/08-prometheus.png"" />
+</p>
+
+ 10. Acesso Grafana.
+<p align="center">
+<img src="./evidencias/10-grafana.png"" />
 </p>

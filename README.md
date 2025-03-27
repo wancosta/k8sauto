@@ -301,11 +301,13 @@ Pré-requisitos necessário para execução do desafio:
    ```
    </details>
 
+---
 
+## **4. Criando o Cluster kubernetes no kind.**
+<details>
+<summary>Docker</summary>
 
-
-   
-1. Criar o Cluster Kubernetes com Kind: 
+ 1. Criar o Cluster Kubernetes com Kind: 
    ```bash
    Criando um arquivo de configuração para provisionar o cluster com o Control-plane e 3 workers.
    Crie um arquivo .yml com o conteudo abaixo
@@ -318,13 +320,26 @@ Pré-requisitos necessário para execução do desafio:
      - role: worker
      - role: worker
    ```
+
 2. Criar o Cluster Kubernetes com Kind: 
    ```bash
    Para chamar o arquivo e provisionar o cluster com 3 worker digite:
 
-   kind create cluster --name desafio-cluster-3 --config ./kind-3-nodes.yml
+   kind create cluster --name desafio-app --config ./kind-cluster.yml
+   ```
+3. Importando imagem para o cluster:
+   ```bash
+    Par enviar a imagem para o cluster recem criado digite:
+   
+   kind load docker-image desafio-iti --name desafio-it
+
+   Agora com nossa imagem pronta, vamos utiliza-la para deployar nossa aplicação.
    ```
 </details>
+
+
+
+
 
 
 Configurando auto-escalamento (HPA - Horizontal Pod Autoscaler)

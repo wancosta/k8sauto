@@ -428,3 +428,74 @@ spec:
             - containerPort: 8080
    ```
 </details>
+
+---
+
+## **7. Terrafor.**
+<details>
+<summary>Terraform</summary>
+
+ 1. Agora vamos criar a receita do terraforma para executar o Helm e depoiar a aplicação. 
+   ```bash
+   Crie uma pasta terraform mkdir terraform.
+   Crie um arquivo main.tf onde iremos configurar nosso provider.
+   Conforme abaixo:
+
+   provider "helm" {
+     kubernetes {
+       config_path    = "~/.kube/config"
+       config_context = "kind-desafio-app"
+     }
+   }
+
+   resource "helm_release" "desafio_app" {
+     name       = "desafio-app"
+     chart      = "../Chart/app"
+     namespace  = "default"
+
+     set {
+       name  = "image.repository"
+       value = "desafio-app"
+     }
+
+     set {
+       name  = "image.tag"
+       value = "latest"
+     }
+
+     set {
+       name  = "image.pullPolicy"
+       value = "Never"
+     }
+
+     set {
+       name  = "service.port"
+       value = 8080
+     }
+   }
+   ```
+
+ 2. Agora seá a reeita do arquivo de variaveis. 
+   ```bash
+   No diretório terraform crie o arquivo variable.tf
+
+   variable "namespace" {
+     default = "desafio-app"
+   }
+
+   variable "image_repository" {
+     default = "desafio-app"
+   }
+
+   variable "image_tag" {
+     default = "latest"
+   }
+
+   variable "image_pull_policy" {
+     default = "Never"
+   }
+
+   variable "service_port" {
+     default = 8080
+   }
+   ```

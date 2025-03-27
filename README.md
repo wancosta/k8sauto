@@ -32,7 +32,7 @@ Clone esse repositório e realize todas as modificações, depois que terminar, 
 ## **Pré-requisitos**
 
 Pré-requisitos necessário para execução do desafio:
- Git - Terraform / tfenv - ocker - Kind - Kubectl - java-17-openjdk - Gradle 4.10 - kotlin - Helm -  Metrics Server / Para auto scale
+ Git - Terraform / tfenv - docker - Kind - Kubectl - java-17-openjdk - Gradle 4.10 - kotlin - Helm -  Metrics Server / Para auto scale
 
 ---
 
@@ -146,12 +146,69 @@ Pré-requisitos necessário para execução do desafio:
    ```bash
    kubectl version --output=yaml
    ```
+</details>
+<details>
+<summary>JAVA</summary>
+
+1. Para instalar o JDK , execute o seguinte comando:
+   ```bash
+   sudo apt-get install openjdk-17-jdk
+   ```
+2. Para verificar a instalação, execute o seguinte comando:
+   ```bash
+   java -version
+   ```
+3. Configurando o kubectl para responder com o usuário em quaquer diretório:
+   ```bash
+   sudo mv ./kubectl /usr/local/bin/kubectl
+   ou
+   sudo ln -s ~/kubectl /usr/local/bin/kubectl
+   ```
+4. Para validar e verificar a versão:
+   ```bash
+   kubectl version --output=yaml
+   ```
+</details>
+<details>
+<summary>GRADLE</summary>
+
+1. Instalar o Gradle usando SDKMAN! (Recomendado):
+   ```bash
+   Instalar o SDKMAN!
+   curl -s "https://get.sdkman.io" | bash
+   ```
+2. Após a instalação, execute o seguinte comando para carregar o SDKMAN! no seu shell:
+   ```bash
+   source "$HOME/.sdkman/bin/sdkman-init.sh"
+   ```
+3. Agora, instale o Gradle usando o SDKMAN!:
+   ```bash
+   sdk install gradle 4.10
+   OBS: Versão 4.10 foi feito download do site "https://gradle.org/next-steps/?version=4.10&format=all"
+   ```
+4. Para validar e verificar a versão:
+   ```bash
+   gradle --version
+   ```
+</details>
+<details>
+<summary>KOTLIN</summary>
+
+1. Instalar o Kotlin usando SDKMAN! (Recomendado):
+   ```bash
+   sdk install kotlin 1.9.10
+   ```
+2. Após a instalação, execute o seguinte comando para validar a versão:
+   ```bash
+   kotlin -version
+   ```
 
 
 
 
-
-
+Instalando o Kotlin:
+sdk install kotlin 1.9.10
+kotlin -version
 
 
 

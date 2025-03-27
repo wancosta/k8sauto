@@ -624,7 +624,9 @@ spec:
 <img src="./evidencias/01-cluster_create.png"" />
 </p>
 
+ 
 ---
+<summary>Metrics Server /HPA Instalado</summary>
  2. Metrics Server /HPA Instalado.
 <p align="center">
 <img src="./evidencias/02-HPA_install.png"" />
@@ -635,13 +637,13 @@ spec:
 <p align="center">
 <img src="./evidencias/03-build_imagem_docker.png"" />
 </p>
-
+ 
 ---
  4. Testando Imagem.
 <p align="center">
 <img src="./evidencias/04-testando_imagem.png"" />
 </p>
-
+ 
 ---
  5. Importando Imagem para o kind.
 <p align="center">
@@ -653,7 +655,6 @@ spec:
 <p align="center">
 <img src="./evidencias/06-inicializando_terraformpng.png"" />
 </p>
-
 ---
  7. Terraform plan.
 <p align="center">

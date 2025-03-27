@@ -617,10 +617,6 @@ spec:
 ---
 
 ## ** Evidencias**
-ONS: Comando para Stress teste:
-```bash
-kubectl run -i --tty load-generator --rm --image=desafio-app --restart=Never -- /bin/sh -c "while true; do wget -q -O- http://localhost:8080; done"
-```
 
 <details>
  1. Conforme evidencias abaixo, cluster criado. 
@@ -682,3 +678,8 @@ OBS: Coloquei um POD para restart para evidenciar
 <p align="center">
 <img src="./evidencias/10-grafana.png"" />
 </p>
+
+OBS: Comando para Stress teste:
+```bash
+kubectl run -i --tty load-generator --rm --image=desafio-app --restart=Never -- /bin/sh -c "while true; do wget -q -O- http://localhost:8080; done"
+```

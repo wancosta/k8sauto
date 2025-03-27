@@ -597,8 +597,6 @@ spec:
          revision: 1
    ```
 
-  </details>
-
  2. Deployando a Observalidade "Grafana e Prometheus". 
    ```bash
    Agora adicione o repositorio com o comando:

@@ -232,17 +232,19 @@ Pré-requisitos necessário para execução do desafio:
    Ambos serão instalados via receita terraform.
    ```
 </details>
+
 ---
 
 ## **2. Buildando a aplicação**
 <details>
 <summary>GRADLE</summary>
+
 1. Com o Gradle 4.10 instalado execute:
    ```bash
-   Gradle inite - Ira verificar os pacotes e baixar os pendentes
-   Gradle build java application --continue  - Ira buikdar a app dando alguns bypass.
+   Gradle inite - Ira verificar os pacotes e baixar os pendentes.
+   Gradle build java application --continue  - Ira buikdar a app dando alguns bypass
    OBS: Provavelmnte será necessarios alguns troubleshooting
-       ```
+   ```
 2. Validação:
    ```bash
    Ao concluir acesse o diretório /app/build/libs

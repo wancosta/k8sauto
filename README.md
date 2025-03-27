@@ -252,31 +252,89 @@ Pré-requisitos necessário para execução do desafio:
    ```
 </details>
 
+---
+
+## **3. Conteinerizando o app.jar**
+<details>
+<summary>Docker</summary>
+
+1. Crie o Dockerfile com o cnteúdo abaixo:
+   ```bash
+   # Use uma imagem base com OpenJDK
+   FROM openjdk:17-jdk-slim as build
+
+   # Defina o diretório de trabalho dentro do container
+   WORKDIR /app
+
+   # Copie o arquivo JAR para dentro do container
+   COPY target/app.jar /app/app.jar
+
+   # Exponha a porta 8080 para o acesso externo
+   EXPOSE 8080
+
+   # Comando para rodar a aplicação
+   ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+   ```
+2. Construção da Imagem Docker: 
+   ```bash
+      No mesmo diretório que se encontra o dockerfile execute:
+      docker build -t desafio-app .
+
+      O Comando acima ira executar o dockerfile, e eas ações cotidas nele:
+      Fazer o download da imagem: openjdk:17-jdk-slim
+      Definir o /app como local de trabalho
+      Ira copiar o arquivo que foi buildado "app.jar" para a pasta /app na imagem
+      Espoem a porta que a aplicação será executada.
+      E executa a app no container.
+   ```
+
+3. Testando a imagem: 
+   ```bash
+   Podemos testar a aplicação localmente executando o seguinte comando:
+   docker run -p 8080:8080 desafio-app
+
+   Agora bastar acessar no navegador: http://localhost:8080
+   ou no terminal
+   curl http://localhost:8080
+
+   Em abos o retorno será o mesmo: Hello Word
+   ```
+   </details>
 
 
 
---
-Containerizando a Aplicação Kotlin
 
-* Crie o Dockerfile:
-vim Dockerfile
+   
+1. Criar o Cluster Kubernetes com Kind: 
+   ```bash
+   Criando um arquivo de configuração para provisionar o cluster com o Control-plane e 3 workers.
+   Crie um arquivo .yml com o conteudo abaixo
 
-Adicione as segiontes linhas no docker file:
+   kind: Cluster
+   apiVersion: kind.x-k8s.io/v1alpha4
+   nodes:
+     - role: control-plane
+     - role: worker
+     - role: worker
+     - role: worker
+   ```
+2. Criar o Cluster Kubernetes com Kind: 
+   ```bash
+   Para chamar o arquivo e provisionar o cluster com 3 worker digite:
 
-# Use uma imagem base com OpenJDK
-FROM openjdk:17-jdk-slim as build
+   kind create cluster --name desafio-cluster-3 --config ./kind-3-nodes.yml
+   ```
+</details>
 
-# Defina o diretório de trabalho dentro do container
-WORKDIR /app
 
-# Copie o arquivo JAR para dentro do container
-COPY target/app.jar /app/app.jar
+Configurando auto-escalamento (HPA - Horizontal Pod Autoscaler)
+* Instalando Metrics Server.
 
-# Exponha a porta 8080 para o acesso externo
-EXPOSE 8080
+Execute o seguinte comando para instalar o Metrics Server:
+kubectl apply -f https://github.com/wancosta/desafio/blob/main/components.yaml
 
-# Comando para rodar a aplicação
-ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+Execute o seguinte comando para verificar se o Metrics Server está funcionando corretamente:
+kubectl get deployment metrics-server -n kube-system
 
 
 

@@ -232,9 +232,48 @@ Pré-requisitos necessário para execução do desafio:
    Ambos serão instalados via receita terraform.
    ```
 
+## **2. Buildando a aplicação**
+<details>
+<summary>GRADLE</summary>
+
+1. Com o Gradle 4.10 instalado execute:
+   ```bash
+   Gradle inite - Ira verificar os pacotes e baixar os pendentes
+   Gradle build java application --continue  - Ira buikdar a app dando alguns bypass.
+   OBS: Provavelmnte será necessarios alguns troubleshooting
+       ```
+2. Validação:
+   ```bash
+   Ao concluir acesse o diretório /app/build/libs
+   Valide que o arquivo app.jar foi criado.
+   ```
+</details>
 
 
 
+
+--
+Containerizando a Aplicação Kotlin
+
+* Crie o Dockerfile:
+vim Dockerfile
+
+Adicione as segiontes linhas no docker file:
+
+# Use uma imagem base com OpenJDK
+FROM openjdk:17-jdk-slim as build
+
+# Defina o diretório de trabalho dentro do container
+WORKDIR /app
+
+# Copie o arquivo JAR para dentro do container
+COPY target/app.jar /app/app.jar
+
+# Exponha a porta 8080 para o acesso externo
+EXPOSE 8080
+
+# Comando para rodar a aplicação
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
 
 
 

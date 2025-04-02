@@ -208,21 +208,21 @@ Pré-requisitos necessário para execução do desafio:
    ```bash
    curl -fsSL https://get.helm.sh/helm-v3.16.1-linux-amd64.tar.gz -o helm-linux-amd64.tar.gz
    ```
-   2. Extraido pacote
+2. Extraido pacote
    ```bash
    tar -zxvf helm-linux-amd64.tar.gz
    ```
-   3 Movendo par o /usr/local/bin/ para chamar o binario de qualque lugar no servidor.
+3 Movendo par o /usr/local/bin/ para chamar o binario de qualque lugar no servidor.
    ```bash
    sudo mv linux-amd64/helm /usr/local/bin/helm
    ```
-   4. Validando a instalação e versão:
+4. Validando a instalação e versão:
    ```bash
    helm version
    ```
 </details>
 <details>
-<summary>Grafahna e prometheus</summary>
+<summary>Grafana e prometheus</summary>
 
 1. OBS:
    ```bash

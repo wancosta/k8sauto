@@ -166,16 +166,6 @@ Pré-requisitos necessário para execução do desafio:
    ```bash
    java -version
    ```
-3. Configurando o kubectl para responder com o usuário em quaquer diretório:
-   ```bash
-   sudo mv ./kubectl /usr/local/bin/kubectl
-   ou
-   sudo ln -s ~/kubectl /usr/local/bin/kubectl
-   ```
-4. Para validar e verificar a versão:
-   ```bash
-   kubectl version --output=yaml
-   ```
 </details>
 <details>
 <summary>GRADLE</summary>
